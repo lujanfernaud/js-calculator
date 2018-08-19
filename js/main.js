@@ -84,10 +84,14 @@ class Calculator {
   displayResult() {
     if (this.result === 0) { this.clearState() }
 
+    this.screen.innerHTML = this.prepareResult()
+  }
+
+  prepareResult() {
     if (isInteger(this.result)) {
-      this.screen.innerHTML = this.result
+      return this.result
     } else {
-      this.screen.innerHTML = this.result.toFixed(2)
+      return this.result.toFixed(2)
     }
   }
 
@@ -110,27 +114,27 @@ class Calculator {
 
   modulo(value1, value2) {
     this.result = Number(value1) % Number(value2)
-    this.toDisplay = [this.result]
+    this.toDisplay = [this.prepareResult()]
   }
 
   add(value1, value2) {
     this.result = Number(value1) + Number(value2)
-    this.toDisplay = [this.result]
+    this.toDisplay = [this.prepareResult()]
   }
 
   subtract(value1, value2) {
     this.result = Number(value1) - Number(value2)
-    this.toDisplay = [this.result]
+    this.toDisplay = [this.prepareResult()]
   }
 
   multiply(value1, value2) {
     this.result = Number(value1) * Number(value2)
-    this.toDisplay = [this.result]
+    this.toDisplay = [this.prepareResult()]
   }
 
   divide(value1, value2) {
     this.result = Number(value1) / Number(value2)
-    this.toDisplay = [this.result]
+    this.toDisplay = [this.prepareResult()]
   }
 
   notValid() {
