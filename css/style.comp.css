@@ -299,7 +299,7 @@ template {
 
 html {
   font-size: 125%;
-  font-family: sans-serif; }
+  font-family: sans; }
 
 .container {
   display: flex;
