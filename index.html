@@ -10,31 +10,41 @@
   <main class="container">
 
     <div class="calculator">
-      <div class="calculator__screen">
+      <div id="screen" class="calculator__screen">
         0
       </div>
 
       <div class="calculator__buttons">
-        <div class="calculator__button calculator__button--color-1">C</div>
-        <div class="calculator__button">...</div>
-        <div class="calculator__button">%</div>
-        <div class="calculator__button calculator__button--color-2">/</div>
-        <div class="calculator__button">7</div>
-        <div class="calculator__button">8</div>
-        <div class="calculator__button">9</div>
-        <div class="calculator__button calculator__button--color-2">X</div>
-        <div class="calculator__button">4</div>
-        <div class="calculator__button">5</div>
-        <div class="calculator__button">6</div>
-        <div class="calculator__button calculator__button--color-2">-</div>
-        <div class="calculator__button">1</div>
-        <div class="calculator__button">2</div>
-        <div class="calculator__button">3</div>
-        <div class="calculator__button calculator__button--color-2">+</div>
-        <div class="calculator__button">0</div>
-        <div class="calculator__button">...</div>
-        <div class="calculator__button">.</div>
-        <div class="calculator__button calculator__button--color-2">=</div>
+        <div class="calculator__button calculator__button--color-1"
+          id="button-clear" data-value="C">C</div>
+        <div class="calculator__button"></div>
+        <div class="calculator__button" id="button" data-value="%">%</div>
+        <div class="calculator__button calculator__button--color-2"
+          id="button" data-value="/">/</div>
+
+        <div class="calculator__button" id="button" data-value="7">7</div>
+        <div class="calculator__button" id="button" data-value="8">8</div>
+        <div class="calculator__button" id="button" data-value="9">9</div>
+        <div class="calculator__button calculator__button--color-2"
+          id="button" data-value="*">x</div>
+
+        <div class="calculator__button" id="button" data-value="4">4</div>
+        <div class="calculator__button" id="button" data-value="5">5</div>
+        <div class="calculator__button" id="button" data-value="6">6</div>
+        <div class="calculator__button calculator__button--color-2"
+          id="button" data-value="-">-</div>
+
+        <div class="calculator__button" id="button" data-value="1">1</div>
+        <div class="calculator__button" id="button" data-value="2">2</div>
+        <div class="calculator__button" id="button" data-value="3">3</div>
+        <div class="calculator__button calculator__button--color-2"
+          id="button" data-value="+">+</div>
+
+        <div class="calculator__button" id="button" data-value="0">0</div>
+        <div class="calculator__button"></div>
+        <div class="calculator__button" id="button" data-value=".">.</div>
+        <div class="calculator__button calculator__button--color-2"
+          id="button-execute" data-value="=">=</div>
       </div>
     </div>
 
