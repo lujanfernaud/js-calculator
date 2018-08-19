@@ -1,0 +1,34 @@
+//
+// Layout
+//
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  color: $color-white;
+  background-color: $color-primary-dark;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 500px;
+  color: $color-primary-dark;
+  background-color: $color-white;
+
+  &__screen {
+    display: flex;
+    flex-basis: 20%;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__buttons {
+    flex: 1;
+  }
+}
