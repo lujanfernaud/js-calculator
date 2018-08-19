@@ -46,10 +46,16 @@ class Calculator {
 
   watchExecuteButton() {
     this.buttonExecute.addEventListener('click', () => {
+      if (this.isNotAValidOperation()) { return false }
+
       this.prepareOperationsToExecute()
       this.executeOperations()
       this.displayResult()
     })
+  }
+
+  isNotAValidOperation() {
+    return !this.toDisplay.join('').match(OPERATIONS)
   }
 
   prepareOperationsToExecute() {
