@@ -1,4 +1,4 @@
-const OPERATIONS = /(\d+\D\d+)(\D\d+)?(\D\d+)?(\D\d+)?(\D\d+)?/
+const OPERATIONS = /(\d+\D\d+)(\D\d+)?(\D\d+)?(\D\d+)?(\D\d+)?(\D\d+)?/
 
 class Calculator {
   constructor() {
