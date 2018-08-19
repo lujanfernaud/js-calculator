@@ -41,7 +41,8 @@ class Calculator {
 
   clearState() {
     this.toDisplay = []
-    this.screen.innerHTML = [0]
+    this.result = 0
+    this.screen.innerHTML = 0
   }
 
   watchExecuteButton() {
@@ -133,8 +134,12 @@ class Calculator {
   }
 
   divide(value1, value2) {
-    this.result = Number(value1) / Number(value2)
-    this.toDisplay = [this.prepareResult()]
+    if (value2 === '0') {
+      this.clearState()
+    } else {
+      this.result = Number(value1) / Number(value2)
+      this.toDisplay = [this.prepareResult()]
+    }
   }
 
   notValid() {
