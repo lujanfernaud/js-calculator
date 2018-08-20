@@ -99,7 +99,7 @@ class Calculator {
   operate(operator, value1, value2) {
     switch (operator) {
       case '%':
-        return this.modulo(value1, value2)
+        return this.percentage(value1, value2)
       case '+':
         return this.add(value1, value2)
       case '-':
@@ -113,8 +113,8 @@ class Calculator {
     }
   }
 
-  modulo(value1, value2) {
-    this.result = Number(value1) % Number(value2)
+  percentage(value1, value2) {
+    this.result = Number(value1) * Number(value2) / 100
     this.toDisplay = [this.prepareResult()]
   }
 
