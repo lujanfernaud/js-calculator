@@ -1,9 +1,11 @@
 const OPERATIONS = /(\d+\D\d+)(\D\d+)?(\D\d+)?(\D\d+)?(\D\d+)?(\D\d+)?/
+const OPERATORS = ['%', '/', '*', '-', '+']
 
 class Calculator {
   constructor() {
     this.toDisplay = []
     this.toExecute = []
+    this.previousInput = ''
     this.result = 0
 
     this.screen = document.getElementById('screen')
@@ -23,10 +25,20 @@ class Calculator {
       let buttonValue = button.dataset.value
 
       button.addEventListener('click', () => {
-        this.toDisplay.push(buttonValue)
+        if (this.previousInput === '=' && this.isNotAnOperation(button)) {
+          this.toDisplay = [buttonValue]
+        } else {
+          this.toDisplay.push(buttonValue)
+        }
+
+        this.previousInput = buttonValue
         this.displayValues()
       })
     })
+  }
+
+  isNotAnOperation(button) {
+    return !OPERATORS.includes(button.dataset.value)
   }
 
   displayValues() {
@@ -35,12 +47,14 @@ class Calculator {
 
   watchClearButton() {
     this.buttonClear.addEventListener('click', () => {
+      this.previousInput = 'C'
       this.clearState()
     })
   }
 
   clearState() {
     this.toDisplay = []
+    this.previousInput = ''
     this.result = 0
     this.screen.innerHTML = 0
   }
@@ -48,6 +62,8 @@ class Calculator {
   watchExecuteButton() {
     this.buttonExecute.addEventListener('click', () => {
       if (this.isNotAValidOperation()) { return false }
+
+      this.previousInput = '='
 
       this.prepareOperationsToExecute()
       this.executeOperations()
