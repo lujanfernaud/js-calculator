@@ -23,6 +23,9 @@
   overflow: hidden;
   box-shadow: 0 .225rem 2.3rem rgba($color-black, .28);
 
+  -webkit-user-select: none;
+     -moz-user-select: none;
+
   &__screen {
     display: flex;
     flex-basis: 25%;

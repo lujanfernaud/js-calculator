@@ -319,7 +319,9 @@ html {
   background-color: #fff;
   border-radius: .4rem;
   overflow: hidden;
-  box-shadow: 0 0.225rem 2.3rem rgba(0, 0, 0, 0.28); }
+  box-shadow: 0 0.225rem 2.3rem rgba(0, 0, 0, 0.28);
+  -webkit-user-select: none;
+  -moz-user-select: none; }
   .calculator__screen {
     display: flex;
     flex-basis: 25%;
